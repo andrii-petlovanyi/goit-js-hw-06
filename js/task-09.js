@@ -12,3 +12,5 @@ refs.button.addEventListener("click", () => {
   document.body.style.backgroundColor = rgb;
   refs.txtColor.textContent = rgb;
 });
+
+
