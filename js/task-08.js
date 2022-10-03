@@ -8,10 +8,12 @@ function onFormSubmit(event) {
   const formData = new FormData(event.currentTarget);
   const email = event.currentTarget.elements.email.value;
   const password = event.currentTarget.elements.password.value;
-  email.length && password.length
-    ? formData.forEach((value, name) => {
-        console.log(`${name} : ${value}`);
-        form.reset();
-      })
-    : alert("Заповніть, будь ласка, всі поля форми!");
+  if (email.length && password.length) {
+    formData.forEach((value, name) => {
+      console.log(`${name} : ${value}`);
+      form.reset();
+    });
+  } else {
+    alert("Заповніть, будь ласка, всі поля форми!");
+  }
 }
