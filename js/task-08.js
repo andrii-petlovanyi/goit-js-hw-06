@@ -11,8 +11,8 @@ function onFormSubmit(event) {
   if (email.length && password.length) {
     formData.forEach((value, name) => {
       console.log(`${name} : ${value}`);
-      form.reset();
     });
+    form.reset();
   } else {
     alert("Заповніть, будь ласка, всі поля форми!");
   }

@@ -22,7 +22,7 @@ function createHandler(amount) {
 function createBoxes(amount) {
   const boxList = [];
 
-  for (let i = 0; i <= amount; i += 1) {
+  for (let i = 0; i < amount; i += 1) {
     const boxMarkup = `<div style="width: ${boxSize}px; height: ${boxSize}px; background-color: ${getRandomHexColor()}"></div>`;
     boxSize += 10;
     boxList.push(boxMarkup);

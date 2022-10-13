@@ -17,7 +17,7 @@ for (let ingredient of ingredients) {
   listItem.classList.add("item");
   listItem.textContent = ingredient;
 
-  itemLisrArr.push(listItem);
+  itemListArr.push(listItem);
 }
 
 mainList.append(...itemListArr);
