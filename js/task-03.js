@@ -1,23 +1,22 @@
 const images = [
   {
-    url: 'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-    alt: 'White and Black Long Fur Cat',
+    url: "https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    alt: "White and Black Long Fur Cat",
   },
   {
-    url: 'https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-    alt: 'Orange and White Koi Fish Near Yellow Koi Fish',
+    url: "https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    alt: "Orange and White Koi Fish Near Yellow Koi Fish",
   },
   {
-    url: 'https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-    alt: 'Group of Horses Running',
+    url: "https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    alt: "Group of Horses Running",
   },
 ];
-
 
 // === CreateElements ==
 // тут зробив без шаблонів
 
-const mainList = document.querySelector('.gallery');
+const mainList = document.querySelector(".gallery");
 
 // for (let image of images) {
 //   const item = document.createElement('li');
@@ -41,13 +40,27 @@ const mainList = document.querySelector('.gallery');
 
 // === аось тут з шаблонами, як просили в дз ===
 
-const makeListImgMarkup = ({url, alt}) => {
-return  `
+// const makeListImgMarkup = ({ url, alt }) => {
+//   return `
+//   <li class='gallery__item'>
+//     <img src=${url} alt="${alt}"/>
+//   </li>
+//   `;
+// };
+
+// const makeListImagesValueMarkup = images.map(makeListImgMarkup).join("");
+// mainList.insertAdjacentHTML("beforeend", makeListImagesValueMarkup);
+
+// === Reduce ====
+const galleryMarkup = images.reduce(
+  (prev, { url, alt }) =>
+    prev +
+    `
   <li class='gallery__item'>
     <img src=${url} alt="${alt}"/>
   </li>
-  `
-}
+  `,
+  ""
+);
 
-const makeListImagesValueMarkup = images.map(makeListImgMarkup).join('');
-mainList.insertAdjacentHTML("beforeend", makeListImagesValueMarkup);
+mainList.insertAdjacentHTML("beforeend", galleryMarkup);
