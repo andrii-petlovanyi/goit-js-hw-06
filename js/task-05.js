@@ -6,7 +6,7 @@ const refs = {
 // === if/else ===
 
 // refs.input.addEventListener("input", (event) => {
-//   if (event.data) {
+//   if (event.target.value) {
 //     refs.outputTxt.textContent = event.currentTarget.value;
 //   } else {
 //     refs.outputTxt.textContent = "Anonymous";
