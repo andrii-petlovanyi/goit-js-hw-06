@@ -16,7 +16,7 @@ const refs = {
 // === Ternary operator ===
 
 refs.input.addEventListener("input", (event) => {
-  refs.outputTxt.textContent = event.data
+  refs.outputTxt.textContent = event.target.value
     ? event.currentTarget.value
     : "Anonymous";
 });
